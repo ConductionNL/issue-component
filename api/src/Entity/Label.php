@@ -93,7 +93,7 @@ class Label
     private $name;
 
     /**
-     * @var string The description of this application.
+     * @var string The description of this label.
      *
      * @example This is a label for bugs
      *
@@ -158,7 +158,7 @@ class Label
      * @var Datetime The moment this request last Modified
      *
      * @Groups({"read"})
-     * @Gedmo\Timestampable(on="create")
+     * @Gedmo\Timestampable(on="update")
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $dateModified;

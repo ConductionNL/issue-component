@@ -77,9 +77,9 @@ class Column
     private $id;
 
     /**
-     * @var string The name of this label.
+     * @var string The name of this column.
      *
-     * @example Bug
+     * @example review
      *
      * @Gedmo\Versioned
      * @Assert\NotNull
@@ -118,7 +118,7 @@ class Column
      * @var Datetime The moment this request last Modified
      *
      * @Groups({"read"})
-     * @Gedmo\Timestampable(on="create")
+     * @Gedmo\Timestampable(on="update")
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $dateModified;
