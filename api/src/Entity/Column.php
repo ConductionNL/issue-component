@@ -101,7 +101,8 @@ class Column
     private $project;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Issue", mappedBy="column")
+     * @ORM\OneToMany(targetEntity="App\Entity\Issue", mappedBy="column"
+     * @ORM\JoinColumn(nullable=true)
      */
     private $issues;
 
@@ -169,7 +170,7 @@ class Column
     {
         if (!$this->issues->contains($issue)) {
             $this->issues[] = $issue;
-            $issue->addColumn($this);
+            $issue->setColumn($this);
         }
 
         return $this;
@@ -179,7 +180,10 @@ class Column
     {
         if ($this->issues->contains($issue)) {
             $this->issues->removeElement($issue);
-            $issue->removeColumn($this);
+            // set the owning side to null (unless already changed)
+            if ($issue->getColumn() === $this) {
+                $issue->setColumn(null);
+            }
         }
 
         return $this;

@@ -125,11 +125,13 @@ class Project
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Issue", mappedBy="project")
+     * @ORM\JoinColumn(nullable=true)
      */
     private $issues;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Column", mappedBy="project")
+     * @ORM\JoinColumn(nullable=true)
      */
     private $columns;
 
@@ -210,7 +212,7 @@ class Project
     {
         if (!$this->issues->contains($issue)) {
             $this->issues[] = $issue;
-            $issue->addProject($this);
+            $issue->setProject($this);
         }
 
         return $this;
@@ -220,7 +222,10 @@ class Project
     {
         if ($this->issues->contains($issue)) {
             $this->issues->removeElement($issue);
-            $issue->removeProject($this);
+            // set the owning side to null (unless already changed)
+            if ($issue->getProject() === $this) {
+                $issue->setProject(null);
+            }
         }
 
         return $this;
@@ -248,7 +253,10 @@ class Project
     {
         if ($this->columns->contains($column)) {
             $this->columns->removeElement($column);
-            $column->removeProject($this);
+            // set the owning side to null (unless already changed)
+            if ($column->getProject() === $this) {
+                $column->setProject(null);
+            }
         }
 
         return $this;
