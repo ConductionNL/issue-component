@@ -106,29 +106,24 @@ class Issue
     private $description;
 
     /**
-     * @example https://cc.zuid-drecht.nl/people/e2984465-190a-4562-829e-a8cca81aa35d
-     * @Gedmo\Versioned
+     * @var array Assignees of this issue
      * @Groups({"read","write"})
      * @ORM\Column(type="array", nullable=true)
-     * @Assert\Url
      */
     private $assignees = [];
 
     /**
-     * @example comments for this issue
-     * @Gedmo\Versioned
+     * @var array The comments of this issue
      * @Groups({"read","write"})
      * @ORM\Column(type="array", nullable=true)
-     * @Assert\Url
      */
     private $comments = [];
 
     /**
-     * @var string The owner of this issue.
+     * @var The owner of this issue.
      *
      * @example https://cc.zuid-drecht.nl/people/e2984465-190a-4562-829e-a8cca81aa35d
      *
-     * @Gedmo\Versioned
      * @Assert\Length(
      *      max = 255
      * )
