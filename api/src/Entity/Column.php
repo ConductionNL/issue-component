@@ -8,7 +8,6 @@ use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\BooleanFilter;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\DateFilter;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\OrderFilter;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
-use App\Controller\DefaultController;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -51,7 +50,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *          }
  *     }
  * )
- * @ORM\Entity(repositoryClass="App\Repository\ColumnRepository")
+ * @ORM\Entity()
  * @Gedmo\Loggable(logEntryClass="Conduction\CommonGroundBundle\Entity\ChangeLog")
  *
  * @ApiFilter(BooleanFilter::class)
@@ -94,14 +93,13 @@ class Column
 
     /**
      * @Groups({"read","write"})
-     * @MaxDepth(1)
      * @ORM\ManyToOne(targetEntity="App\Entity\Project", inversedBy="columns")
-     * @ORM\JoinColumn(nullable=false)
+     * @MaxDepth(1)
      */
     private $project;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Issue", mappedBy="column"
+     * @ORM\OneToMany(targetEntity="App\Entity\Issue", mappedBy="column")
      * @ORM\JoinColumn(nullable=true)
      */
     private $issues;

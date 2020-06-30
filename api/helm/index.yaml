@@ -3,14 +3,14 @@ entries:
   ic:
   - apiVersion: v1
     appVersion: V.0.1
-    created: "2020-06-29T14:09:44.809285527Z"
+    created: "2020-06-30T08:00:45.479494193Z"
     description: '&#039;Naast deze JSON rest API is er ook een [graphql](/graphql)
       interface beschikbaar.&#039;'
-    digest: d3f0b068f99b7aecaa9fc40cdfbeb76b139f74b5554f2bb57e6ab2412d590f1c
+    digest: 3cf30f0b687e613b63d578f2c1a160dbbc6ecd0d8cb40323f083a6a996f6a108
     home: ic.zaakonline.nl
     icon: ic.zaakonline.nl
     name: ic
     urls:
     - ic-0.1.0.tgz
     version: 0.1.0
-generated: "2020-06-29T14:09:44.806617027Z"
+generated: "2020-06-30T08:00:45.476875793Z"
