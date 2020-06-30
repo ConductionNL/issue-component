@@ -2117,40 +2117,6 @@ paths:
           schema:
             type: string
         -
-          name: 'name[]'
-          in: query
-          required: false
-          schema:
-            type: array
-            items:
-              type: string
-          style: form
-          explode: true
-        -
-          name: dateCreated
-          in: query
-          required: false
-          schema:
-            type: string
-        -
-          name: 'dateCreated[]'
-          in: query
-          required: false
-          schema:
-            type: string
-        -
-          name: dateModified
-          in: query
-          required: false
-          schema:
-            type: string
-        -
-          name: 'dateModified[]'
-          in: query
-          required: false
-          schema:
-            type: string
-        -
           name: page
           in: query
           required: false
@@ -8047,12 +8013,12 @@ definitions:
         description: 'The moment this request was created'
         type: string
         format: date-time
-        example: '2020-06-30 08:01:48'
+        example: '2020-06-30 08:44:45'
       dateModified:
         description: 'The moment this request last Modified'
         type: string
         format: date-time
-        example: '2020-06-30 08:01:48'
+        example: '2020-06-30 08:44:45'
     required: []
   AuditTrail-write:
     properties:
@@ -8100,12 +8066,12 @@ definitions:
         description: 'The moment this request was created'
         type: string
         format: date-time
-        example: '2020-06-30 08:01:48'
+        example: '2020-06-30 08:44:45'
       dateModified:
         description: 'The moment this request last Modified'
         type: string
         format: date-time
-        example: '2020-06-30 08:01:48'
+        example: '2020-06-30 08:44:45'
     required: []
   ChangeLog-write:
     properties:
