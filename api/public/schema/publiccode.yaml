@@ -118,4 +118,4 @@ dependsOn:
 
 installations:
     - type: helm
-      url: "https://github.com/ConductionNL/issue-component/raw/master/api/helm/ic-0.1.0.tgz"
+      url: "https://raw.githubusercontent.com/ConductionNL/issue-component/master/api/helm/"
