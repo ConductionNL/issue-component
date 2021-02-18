@@ -12,7 +12,7 @@ info:
     - Docker Image: [online](https://hub.docker.com/repository/docker/conduction/ic-php) 
     - Datamodel: [postman](/schema/ic.postman_collection.json) / [oas](/schema/openapi.yaml) / [pdf](/schema/datamodel.pdf) / [modelio (zip)](/schema/Datamodel_Modelio.zip) 
     
-    'Naast deze JSON rest API is er ook een [graphql](/graphql) interface beschikbaar.'         
+    Naast deze JSON rest API is er ook een [graphql](/graphql) interface beschikbaar.         
     
 paths:
   /audit_trails:
@@ -8001,12 +8001,12 @@ definitions:
         description: 'The moment this request was created'
         type: string
         format: date-time
-        example: '2020-06-30 09:47:24'
+        example: '2021-02-18 01:30:01'
       dateModified:
         description: 'The moment this request last Modified'
         type: string
         format: date-time
-        example: '2020-06-30 09:47:24'
+        example: '2021-02-18 01:30:01'
     required: []
   AuditTrail-write:
     properties:
@@ -8054,12 +8054,12 @@ definitions:
         description: 'The moment this request was created'
         type: string
         format: date-time
-        example: '2020-06-30 09:47:24'
+        example: '2021-02-18 01:30:01'
       dateModified:
         description: 'The moment this request last Modified'
         type: string
         format: date-time
-        example: '2020-06-30 09:47:24'
+        example: '2021-02-18 01:30:01'
     required: []
   ChangeLog-write:
     properties:
